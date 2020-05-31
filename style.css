@@ -1,0 +1,53 @@
+/*
+Tic-tac-toe
+Author: GERRG
+Version: 0.1    
+URL: GERRG.com
+Mission Statement:Vanilla JS tic-tac-toe application.
+*/
+body {
+  background-color: #333;
+  color: #f7f7f7; }
+
+#ticTacToe {
+  width: 500px;
+  margin: 0 auto; }
+  #ticTacToe .ui {
+    text-align: center;
+    border-bottom: 1px solid #f7f7f7;
+    padding: 1rem; }
+    #ticTacToe .ui h1 {
+      padding: 0;
+      margin: 0; }
+    #ticTacToe .ui .scores p {
+      padding: 0;
+      margin: 0; }
+    #ticTacToe .ui .scores .score {
+      font-size: 2rem;
+      color: red;
+      font-weight: 700; }
+  #ticTacToe .game {
+    padding: 2rem;
+    width: 100%; }
+    #ticTacToe .game td {
+      text-align: center;
+      font-size: 5rem;
+      height: 130px;
+      width: 130px; }
+
+.b-all {
+  border: 5px solid #f7f7f7; }
+
+.b-left {
+  border-left: 5px solid #f7f7f7; }
+
+.b-right {
+  border-right: 5px solid #f7f7f7; }
+
+.b-top {
+  border-top: 5px solid #f7f7f7; }
+
+.b-bottom {
+  border-bottom: 5px solid #f7f7f7; }
+
+/*# sourceMappingURL=style.css.map */
