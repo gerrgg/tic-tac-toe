@@ -15,27 +15,27 @@
 
   <div id="ticTacToe">
     <div class="ui">
-      <h1>Tic Tac Toe</h1>
+      <h1>Tic Tac Toe - Turn: <span id="turn-counter">0</span></h1>
       <div class="scores">
-        <p>Player 1: <span id="player-1-score" class="score">5</span></p>
-        <p>Player 2: <span id="player-2-score" class="score">2</span></p>
+        <p>Player 1: <span id="player-x-score" class="score">0</span></p>
+        <p>Player 2: <span id="player-o-score" class="score">0</span></p>
       </div>
     </div>
     <table class="game">
       <tr>
-        <td></td>
-        <td class="b-left b-right"></td>
-        <td></td>
+        <td id="0"></td>
+        <td id="1" class="b-left b-right"></td>
+        <td id="2"></td>
       </tr>
       <tr>
-        <td class="b-top b-bottom"></td>
-        <td class="b-all"></td>
-        <td class="b-top b-bottom"></td>
+        <td id="3" class="b-top b-bottom"></td>
+        <td id="4" class="b-all"></td>
+        <td id="5" class="b-top b-bottom"></td>
       </tr>
       <tr>
-        <td></td>
-        <td class="b-left b-right"></td>
-        <td></td>
+        <td id="6"></td>
+        <td id="7" class="b-left b-right"></td>
+        <td id="8"></td>
       </tr>
     </table>
   </div>
