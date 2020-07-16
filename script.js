@@ -5,19 +5,18 @@ const playerFactory = ( symbol ) => {
       return { wins, symbol }
 }
 
-
 const ticTacToe = (() => {
 
       var cells = document.getElementsByTagName('td');
+      var board = [ '', '', '', '', '', '', '', '', ''];
+      var turn = 0;
 
       var players = {
             'x': playerFactory('x'),
             'o': playerFactory('o')
       }
 
-      var board = [ '', '', '', '', '', '', '', '', ''];
 
-      var turn = 0;
 
       const move = ( e ) => {
             /**
@@ -25,12 +24,24 @@ const ticTacToe = (() => {
              */
             let currentPlayer = whoseTurnIsItAnyways();
 
-            if( ! gameOver() ){
-                  e.target.innerText = currentPlayer.symbol
+
+            if( ! gameOver() && board[e.target.id] === '' ){
+                  board[e.target.id] = currentPlayer.symbol;
+                  render()
+
                   turn++;
                   updateTurnCounter()
             }
 
+      }
+
+      const render = () => {
+            /**
+             * Take the board and put it in the DOM
+             */
+            for( let i = 0; i < cells.length; i++ ){
+                  cells[i].innerText = board[i]
+            }
       }
 
       const updateTurnCounter = () => {
