@@ -5,7 +5,10 @@ const playerFactory = ( symbol ) => {
       
       let wins = 0;
 
-      const win = () => { wins++; }
+      const win = () => { 
+            wins++; 
+            document.getElementById('player-' + symbol + '-score').innerText = wins
+      }
 
       return { wins, symbol, win }
 }
@@ -14,6 +17,7 @@ const ticTacToe = (() => {
 
       // dom elements
       var cells = document.getElementsByTagName('td');
+      var restartButton = document.getElementById('restart-button');
 
       // init variables
       var gameIsOver = false;
@@ -21,12 +25,13 @@ const ticTacToe = (() => {
       var turn = 0;
 
       //setup players
+      
       var players = {
             'x': playerFactory('x'),
             'o': playerFactory('o')
       }
-
-
+      
+      var currentPlayer = players['x']
 
       /**
        * Runs when a cell is clicked - decides whose turn it is, reflects the event and checks for winner
@@ -34,8 +39,7 @@ const ticTacToe = (() => {
        */
       const move = ( e ) => {
 
-            // get whose turn it is
-            let currentPlayer = whoseTurnIsItAnyways();
+            currentPlayer = whoseTurnIsItAnyways();
 
             // the cell last clicked
             let index = e.target.id;
@@ -55,8 +59,7 @@ const ticTacToe = (() => {
                         gameIsOver = checkForWinner();
                   }
                   
-            } 
-
+            }
       }
 
       const updateTheDom = () => {
@@ -135,11 +138,16 @@ const ticTacToe = (() => {
       const loopNcheck = (arrays) => {
 
             for( let array of arrays ){
-                  if( allEqualAndNotBlank( array ) ) { return [ true, array ] }
+                  if( allEqualAndNotBlank( array ) ) {
+                        currentPlayer.win()
+                        return true; 
+                  }
             }
 
             return false
       }
+
+
 
        /**
        * Checks if the array given is equal to the first element and also not blank.
@@ -179,10 +187,24 @@ const ticTacToe = (() => {
 
       }
 
+      /**
+       * Pick things up and put them where they belong (restart)
+       */
+      const restart = () => {
+            board = [ '', '', '', '', '', '', '', '', ''];
+            turn = 0;
+            currentPlayer = players['x'];
+            gameIsOver = false;
+
+            updateTheDom()
+      }
+
       // listeners
       for( let cell of cells  ){
-            cell.addEventListener('click', move)
+            cell.addEventListener( 'click', move )
       }
+
+      restartButton.addEventListener( 'click', restart )
 
 
 })();
