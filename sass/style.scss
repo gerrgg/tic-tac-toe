@@ -8,7 +8,7 @@ Mission Statement:Vanilla JS tic-tac-toe application.
 
 $color-main: #f7f7f7;
 $color-bg: #333;;
-$color-danger: red;
+$color-secondary: #f0bf4b;
 
 body{
     background-color: $color-bg;
@@ -24,14 +24,28 @@ body{
         text-align: center;
         border-bottom: 1px solid #f7f7f7;
         padding: 1rem;
+
+        #turn-counter{ color: $color-secondary }
         
         h1{
             padding: 0;
             margin: 0;
         }
 
-        .scores{
+        #restart-button{
+            background-color: transparent;
+            color: $color-secondary;
+            margin-top: 1rem;
+            padding: .5rem 1rem;
+            font-size: 2rem;
+        }
 
+        .after-author{ 
+            display: flex; 
+            justify-content: space-between;
+        }
+
+        .scores{
 
             p{
                 padding: 0;
@@ -40,8 +54,29 @@ body{
 
             .score{
                 font-size: 2rem;
-                color: $color-danger;
+                color: $color-secondary;
                 font-weight: 700;
+            }
+        }
+
+        .author-details{
+
+            h2{ font-size: 1.25rem }
+
+            
+            a{ 
+                padding: 0 1rem;
+                border-right: 1px solid $color-main;
+                text-decoration: none;
+                color: white;
+                margin-bottom: 1rem;
+
+                &:last-child { border-right: 0px }
+
+                i { 
+                    font-size: 2rem;
+                    color: $color-secondary; 
+                }
             }
         }
     }
@@ -54,6 +89,7 @@ body{
             font-size: 5rem;
             height: 130px;
             width: 130px;
+            color: $color-secondary;
         }
     }
 }

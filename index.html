@@ -8,6 +8,7 @@
   <meta name="description" content="Tic-tac-toe with vanilla JS">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
+  <script src="https://kit.fontawesome.com/dd960d1f1a.js" crossorigin="anonymous"></script>
   <link href="style.css" rel="stylesheet">
 </head>
 
@@ -16,12 +17,26 @@
   <div id="ticTacToe">
     <div class="ui">
       <h1>Tic Tac Toe - Turn: <span id="turn-counter">0</span></h1>
-      <div class="scores">
-        <p>Player 1: <span id="player-x-score" class="score">0</span></p>
-        <p>Player 2: <span id="player-o-score" class="score">0</span></p>
+
+      <div class="author-details">
+        <h2>Greg "GERRG" Bastianelli</h2>
+        <p class="inline-links">
+          <a href="http://gerrg.com"><i class="fas fa-meh-blank"></i> GERRG.com</a> 
+          <a href="https://github.com/gerrgg/tic-tac-toe"><i class="fab fa-github"></i> Source Code</a> 
+        </p>
       </div>
 
-      <button id="restart-button">Restart</button>
+      <div class="after-author">
+
+        <div class="scores">
+          <p>Player 1: <span id="player-x-score" class="score">0</span></p>
+          <p>Player 2: <span id="player-o-score" class="score">0</span></p>
+        </div>
+  
+        <button id="restart-button">Restart</button>
+
+      </div>
+      
     </div>
     <table class="game">
       <tr>
