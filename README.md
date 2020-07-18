@@ -3,6 +3,7 @@
 Tic-Tac-Toe application using vanilla JS / Sass.
 
 Live: https://gerrgg.github.io/tic-tac-toe/
+
 Project: https://www.theodinproject.com/courses/javascript
 
 ![](img/tic-tac-toe.gif)
